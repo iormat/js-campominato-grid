@@ -18,3 +18,67 @@ l’importante è dare all’utente il feedback che ha scoperto una casella che 
         2.2 make sure to create a grid based on user choice
             (assicurarsi di creare una griglia che prende in considerazione la scelta dell'utente)
 */
+
+const mineField = document.getElementById('minefield');
+
+//function to create squares
+function createSquare(squareCont, squareStyle, gameDiff) {
+    let node = document.createElement(squareCont);
+    node.classList.add(squareStyle , gameDiff);
+    return node;
+}
+
+// easy
+document.getElementById('easy').addEventListener('click',
+    function() {
+        for(let i = 1; i < 101; i++) {
+            let newElement = createSquare('div', 'square', 'easy');
+            mineField.appendChild(newElement);
+            newElement.addEventListener('click',
+            function(){
+                    newElement.append(i);
+                    newElement.classList.add('active');
+                }
+            );
+        }
+        document.getElementById('easy').disabled = true;
+        document.getElementById('medium').disabled = true;
+        document.getElementById('hard').disabled = true;
+    }
+);
+//  medium
+document.getElementById('medium').addEventListener('click',
+    function() {
+        for(let i = 1; i < 82; i++) {
+            let newElement = createSquare('div', 'square', 'medium');
+            mineField.appendChild(newElement);
+            newElement.addEventListener('click',
+                function(){
+                    newElement.append(i);
+                    newElement.classList.add('active');
+                }
+            );
+        }
+        document.getElementById('easy').disabled = true;
+        document.getElementById('medium').disabled = true;
+        document.getElementById('hard').disabled = true;
+    }
+);
+//hard
+document.getElementById('hard').addEventListener('click',
+    function() {
+        for(let i = 1; i < 50; i++) {
+            let newElement = createSquare('div', 'square', 'hard');
+            mineField.appendChild(newElement);
+            newElement.addEventListener('click',
+                function(){
+                    newElement.append(i);
+                    newElement.classList.add('active');
+                }
+            );
+        }
+        document.getElementById('easy').disabled = true;
+        document.getElementById('medium').disabled = true;
+        document.getElementById('hard').disabled = true;
+    }
+);

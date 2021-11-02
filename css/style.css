@@ -37,23 +37,33 @@ header button:hover {
     display: flex;
     flex-flow: row wrap;
 }
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.square:after {
+    content: "";
+    padding-top: 100%;
+}
+
 /* squares based on difficulty */
 .square.easy {
-    padding-top: calc(100% / 10 - 20px);
     width: calc(100% / 10 - 10px);
     margin: 5px;
     border: 5px solid #cecece;
 }
 
 .square.medium {
-    padding-top: calc(100% / 9 - 20px);
     width: calc(100% / 9 - 10px);
     margin: 5px;
     border: 5px solid #cecece;
 }
 
 .square.hard {
-    padding-top: calc(100% / 7 - 20px);
     width: calc(100% / 7 - 10px);
     margin: 5px;
     border: 5px solid #cecece;
