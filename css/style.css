@@ -25,11 +25,16 @@ header button {
     border-radius: 20px;
 }
 
-header button:hover {
+header button:hover:enabled {
     background-color: cornflowerblue;
     color: #fff;
     cursor: pointer;
 }
+
+header button#change-difficulty {
+    background-color: tomato;
+}
+
 /* MAIN RULES -------------------- */
 #minefield {
     width: 70%;
@@ -43,6 +48,7 @@ header button:hover {
     justify-content: center;
     align-items: center;
     color: #000;
+    font-size: 2rem;
 }
 
 .square:after {
