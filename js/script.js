@@ -36,7 +36,7 @@ document.getElementById('easy').addEventListener('click',
             mineField.appendChild(newElement);
             newElement.addEventListener('click',
             function(){
-                    newElement.append(i);
+                    newElement.innerHTML = i;
                     newElement.classList.add('active');
                 }
             );
@@ -54,7 +54,7 @@ document.getElementById('medium').addEventListener('click',
             mineField.appendChild(newElement);
             newElement.addEventListener('click',
                 function(){
-                    newElement.append(i);
+                    newElement.innerHTML = i;
                     newElement.classList.add('active');
                 }
             );
@@ -72,7 +72,7 @@ document.getElementById('hard').addEventListener('click',
             mineField.appendChild(newElement);
             newElement.addEventListener('click',
                 function(){
-                    newElement.append(i);
+                    newElement.innerHTML = i;
                     newElement.classList.add('active');
                 }
             );

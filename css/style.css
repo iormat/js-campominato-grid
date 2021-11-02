@@ -51,6 +51,10 @@ header button#change-difficulty {
     font-size: 2rem;
 }
 
+.square:hover {
+    cursor: pointer;
+}
+
 .square:after {
     content: "";
     padding-top: 100%;
