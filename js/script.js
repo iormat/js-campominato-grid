@@ -31,9 +31,11 @@ function createSquare(squareCont, squareStyle, gameDiff) {
 }
 
 document.getElementById('start_game').addEventListener('click',
-    
+
     function() {
-        
+        // delete eventual alredy created grid
+        mineField.innerHTML = "";
+        // take chosen difficulty 
         if(diffSelection.value === "1"){
             difficulty = 101;
             gameDiff = 'easy';
@@ -47,7 +49,7 @@ document.getElementById('start_game').addEventListener('click',
         // 2.
         for(let i = 1; i < difficulty; i++) {
             let newElement = createSquare('div', 'square', gameDiff);
-            mineField.append(newElement);
+            mineField.appendChild(newElement);
             // 3.
             newElement.addEventListener('click',
                 function(){
@@ -55,6 +57,6 @@ document.getElementById('start_game').addEventListener('click',
                     newElement.classList.add('active');
                 }
             );
-        }console.log(difficulty)
+        }
     }
 );
