@@ -10,9 +10,13 @@
 <body>
     <header>
         <h1> Minesweeper </h1>
-        <button id="easy">Easy Mode</button>
-        <button id="medium">Medium Mode</button>
-        <button id="hard">Hard Mode</button>
+        <select id="diff_selection">
+            <option value="1"> Easy Mode </option>
+            <option value="2"> Medium Mode </option>
+            <option value="3"> Hard Mode </option>
+        </select>
+
+        <button id="start_game"> Inizia a giocare </button>
         <button id="change-difficulty" onClick="window.location.reload();"> Vuoi cambiare difficolt&agrave;&quest; </button>
     </header>
     <main>

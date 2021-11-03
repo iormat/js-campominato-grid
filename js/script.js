@@ -15,11 +15,13 @@ l’importante è dare all’utente il feedback che ha scoperto una casella che 
     (creare celle cliccabili che cambiano per dare senso all'utente di "selezione")
     2.1 make a function to create a set number of elements
         (fare una funzione per creare un numero definito di elementi)
-        2.2 make sure to create a grid based on user choice
-            (assicurarsi di creare una griglia che prende in considerazione la scelta dell'utente)
+3. when pressed, cells must look different to confirm selection
+    (quando premute, le celle devono cambiare per confermare la selezione)
 */
 
 const mineField = document.getElementById('minefield');
+// 1.
+const diffSelection = document.getElementById('diff_selection');
 
 //function to create squares
 function createSquare(squareCont, squareStyle, gameDiff) {
@@ -28,57 +30,31 @@ function createSquare(squareCont, squareStyle, gameDiff) {
     return node;
 }
 
-// easy
-document.getElementById('easy').addEventListener('click',
+document.getElementById('start_game').addEventListener('click',
+    
     function() {
-        for(let i = 1; i < 101; i++) {
-            let newElement = createSquare('div', 'square', 'easy');
-            mineField.appendChild(newElement);
-            newElement.addEventListener('click',
-            function(){
-                    newElement.innerHTML = i;
-                    newElement.classList.add('active');
-                }
-            );
+        
+        if(diffSelection.value === "1"){
+            difficulty = 101;
+            gameDiff = 'easy';
+        }else if(diffSelection.value === "2"){
+            difficulty = 82;
+            gameDiff = 'medium';
+        }else if(diffSelection.value === "3"){
+            difficulty = 50;
+            gameDiff = 'hard';
         }
-        document.getElementById('easy').disabled = true;
-        document.getElementById('medium').disabled = true;
-        document.getElementById('hard').disabled = true;
-    }
-);
-//  medium
-document.getElementById('medium').addEventListener('click',
-    function() {
-        for(let i = 1; i < 82; i++) {
-            let newElement = createSquare('div', 'square', 'medium');
-            mineField.appendChild(newElement);
+        // 2.
+        for(let i = 1; i < difficulty; i++) {
+            let newElement = createSquare('div', 'square', gameDiff);
+            mineField.append(newElement);
+            // 3.
             newElement.addEventListener('click',
                 function(){
                     newElement.innerHTML = i;
                     newElement.classList.add('active');
                 }
             );
-        }
-        document.getElementById('easy').disabled = true;
-        document.getElementById('medium').disabled = true;
-        document.getElementById('hard').disabled = true;
-    }
-);
-//hard
-document.getElementById('hard').addEventListener('click',
-    function() {
-        for(let i = 1; i < 50; i++) {
-            let newElement = createSquare('div', 'square', 'hard');
-            mineField.appendChild(newElement);
-            newElement.addEventListener('click',
-                function(){
-                    newElement.innerHTML = i;
-                    newElement.classList.add('active');
-                }
-            );
-        }
-        document.getElementById('easy').disabled = true;
-        document.getElementById('medium').disabled = true;
-        document.getElementById('hard').disabled = true;
+        }console.log(difficulty)
     }
 );

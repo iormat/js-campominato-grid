@@ -31,6 +31,10 @@ header button:hover:enabled {
     cursor: pointer;
 }
 
+#diff_selection {
+    width: 200px;
+}
+
 header button#change-difficulty {
     background-color: tomato;
 }
@@ -49,6 +53,7 @@ header button#change-difficulty {
     align-items: center;
     color: #000;
     font-size: 2rem;
+    min-width: 47px;
 }
 
 .square:hover {
